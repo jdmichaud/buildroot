@@ -66,19 +66,26 @@ ifdef QT5WEBENGINE_QMAKE_CFLAGS
 QT5WEBENGINE_QMAKEFLAGS += 'QMAKE_CFLAGS+=$(QT5WEBENGINE_QMAKE_CFLAGS)'
 endif
 
-QT5WEBENGINE_MAKE_ENV = $(TARGET_MAKE_ENV) PATH="$(@D):$$PATH"
+# QtWebengine's build system uses python, but only supports python2. We work
+# around this by forcing python2 early in the PATH, via a python->python2
+# symlink.
+QT5WEBENGINE_ENV = PATH=$(@D)/host-bin:$(BR_PATH)
+define QT5WEBENGINE_PYTHON2_SYMLINK
+	mkdir -p $(@D)/host-bin
+	ln -sf $(HOST_DIR)/usr/bin/python2 $(@D)/host-bin/python
+endef
+QT5WEBENGINE_PRE_CONFIGURE_HOOKS += QT5WEBENGINE_PYTHON2_SYMLINK
 
 define QT5WEBENGINE_CONFIGURE_CMDS
-	ln -s $(HOST_DIR)/usr/bin/python2 $(@D)/python
-	(cd $(@D); $(QT5WEBENGINE_MAKE_ENV) $(HOST_DIR)/usr/bin/qmake $(QT5WEBENGINE_QMAKEFLAGS))
+	(cd $(@D); $(TARGET_MAKE_ENV) $(QT5WEBENGINE_ENV) $(HOST_DIR)/usr/bin/qmake)
 endef
 
 define QT5WEBENGINE_BUILD_CMDS
-	$(QT5WEBENGINE_MAKE_ENV) $(MAKE) -C $(@D)
+	$(QT5WEBENGINE_ENV) $(MAKE) -C $(@D)
 endef
 
 define QT5WEBENGINE_INSTALL_STAGING_CMDS
-	$(QT5WEBENGINE_MAKE_ENV) $(MAKE) -C $(@D) install
+	$(TARGET_MAKE_ENV) $(QT5WEBENGINE_ENV) $(MAKE) -C $(@D) install
 	$(QT5_LA_PRL_FILES_FIXUP)
 endef
 
