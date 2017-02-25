@@ -7,8 +7,8 @@
 QT5WEBENGINE_VERSION = $(QT5_VERSION)
 QT5WEBENGINE_SITE = $(QT5_SITE)
 QT5WEBENGINE_SOURCE = qtwebengine-opensource-src-$(QT5WEBENGINE_VERSION).tar.xz
-QT5WEBENGINE_DEPENDENCIES = qt5base qt5webchannel libcap libglib2 opus libvpx \
-	webp ffmpeg openssl host-gperf host-python
+QT5WEBENGINE_DEPENDENCIES = qt5base qt5declarative qt5webchannel libcap \
+	libglib2 opus libvpx webp ffmpeg openssl host-gperf host-python
 QT5WEBENGINE_INSTALL_STAGING = YES
 
 ifeq ($(BR2_PACKAGE_QT5BASE_LICENSE_APPROVED),y)
@@ -25,10 +25,6 @@ endif
 ifeq ($(BR2_PACKAGE_QT5BASE_XCB),y)
 QT5WEBENGINE_DEPENDENCIES += xlib_libXScrnSaver xlib_libXcomposite \
 	xlib_libXcursor xlib_libXi xlib_libXrandr xlib_libXtst
-endif
-
-ifeq ($(BR2_PACKAGE_QT5DECLARATIVE),y)
-QT5WEBENGINE_DEPENDENCIES += qt5declarative
 endif
 
 ifneq ($(BR2_GCC_TARGET_CPU),)
