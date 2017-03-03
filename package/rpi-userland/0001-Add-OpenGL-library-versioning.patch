@@ -1,0 +1,36 @@
+From c0b5fce145b8b7aec42510d9759d100e92630c74 Mon Sep 17 00:00:00 2001
+From: =?utf-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@savoirfairelinux.com>
+Date: Fri, 3 Mar 2017 17:28:41 -0500
+Subject: [PATCH] Add OpenGL library versioning
+
+Some applications like QtWebEngine require specific library versions.
+Make them happy by providing that.
+
+https://wiki.qt.io/RaspberryPi2EGLFS
+---
+ host_applications/android/apps/vidtex/CMakeLists.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/host_applications/android/apps/vidtex/CMakeLists.txt b/host_applications/android/apps/vidtex/CMakeLists.txt
+index 1f705ef..c91032a 100644
+--- a/host_applications/android/apps/vidtex/CMakeLists.txt
++++ b/host_applications/android/apps/vidtex/CMakeLists.txt
+@@ -10,3 +10,15 @@ set (VIDTEX_SOURCES
+    vidtex.c)
+ add_executable(vidtex ${VIDTEX_SOURCES})
+ target_link_libraries(vidtex GLESv2 EGL m bcm_host mmal_core mmal_components mmal_util mmal_vc_client vcos)
++
++set_target_properties(
++	GLESv2 PROPERTIES
++	VERSION "2.0.0"
++	SOVERSION "2"
++)
++
++set_target_properties(
++	EGL PROPERTIES
++	VERSION "1.0.0"
++	SOVERSION "1"
++)
+-- 
+2.10.2
+
