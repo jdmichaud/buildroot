@@ -7,8 +7,7 @@
 QT5WEBENGINE_VERSION = $(QT5_VERSION)
 QT5WEBENGINE_SITE = $(QT5_SITE)
 QT5WEBENGINE_SOURCE = qtwebengine-opensource-src-$(QT5WEBENGINE_VERSION).tar.xz
-QT5WEBENGINE_DEPENDENCIES = qt5base qt5declarative qt5webchannel libcap \
-	libglib2 opus libvpx webp ffmpeg openssl host-gperf host-python
+QT5WEBENGINE_DEPENDENCIES = qt5base qt5declarative host-gperf host-python
 QT5WEBENGINE_INSTALL_STAGING = YES
 
 ifeq ($(BR2_PACKAGE_QT5BASE_LICENSE_APPROVED),y)
@@ -58,7 +57,7 @@ endif
 # Use system ffmpeg because the embedded FFmpeg requires to create a
 # configuration scripts which is difficult to use due to architecture-dependent
 # arguments.
-QT5WEBENGINE_QMAKEFLAGS = WEBENGINE_CONFIG=use_system_ffmpeg
+#QT5WEBENGINE_QMAKEFLAGS = WEBENGINE_CONFIG=use_system_ffmpeg
 
 ifdef QT5WEBENGINE_QMAKE_CFLAGS
 QT5WEBENGINE_QMAKEFLAGS += 'QMAKE_CFLAGS+=$(QT5WEBENGINE_QMAKE_CFLAGS)'
