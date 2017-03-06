@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-WEBVIEWER_VERSION = 1
-WEBVIEWER_SITE = /home/gportay/src/webviewer
-WEBVIEWER_SITE_METHOD = local
+WEBVIEWER_VERSION = hackathon-20170204
+WEBVIEWER_SITE = $(call github,gazoo74,webviewer,hackathon-20170204)
 
 WEBVIEWER_LICENSE = MIT
 WEBVIEWER_LICENSE_FILES = LICENSE

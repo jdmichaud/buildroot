@@ -1,0 +1,37 @@
+From daa50f9879c8f47e9cade0c9817a04fcb3b2ef91 Mon Sep 17 00:00:00 2001
+From: =?utf-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@savoirfairelinux.com>
+Date: Mon, 6 Mar 2017 18:11:50 -0500
+Subject: [PATCH] Add Makefile
+
+---
+ Makefile | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+ create mode 100644 Makefile
+
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..714356a
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,18 @@
++PREFIX = /usr/local
++
++.PHONY: all
++all:
++	cd quicknanobrowser && qmake && $(MAKE)
++
++.PHONY: install
++install:
++	install -d $(DESTDIR)$(PREFIX)/bin/
++	install -m 755 quicknanobrowser/quicknanobrowser $(DESTDIR)$(PREFIX)/bin/webviewer
++
++.PHONY: clean
++clean:
++	$(MAKE) -C quicknanobrowser clean
++
++.PHONY: mrproper
++mrproper:
++	$(MAKE) -C quicknanobrowser distclean
+-- 
+2.10.2
+
