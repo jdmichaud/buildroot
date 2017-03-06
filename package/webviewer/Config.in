@@ -1,6 +1,7 @@
 config BR2_PACKAGE_WEBVIEWER
 	bool "webviewer"
 	depends on BR2_PACKAGE_QT5
-	select BR2_PACKAGE_QT5WEBENGINE
+	depends on BR2_PACKAGE_QT5WEBENGINE
+	select BR2_PACKAGE_QT5WIDGETS
 	help
 	  A QT Web-Viewer controllable with tcp socket
