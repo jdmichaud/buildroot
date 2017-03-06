@@ -4,6 +4,7 @@ comment "qt5webengine needs an Open(E)GL-capable backend"
 
 config BR2_PACKAGE_QT5WEBENGINE
 	bool "qt5webengine"
+	select BR2_PACKAGE_LIBGLIB2
 	select BR2_PACKAGE_QT5BASE
 	select BR2_PACKAGE_QT5BASE_FONTCONFIG if !BR2_PACKAGE_FONTCONF
 	select BR2_PACKAGE_QT5BASE_DBUS if !BR2_PACKAGE_DBUS
