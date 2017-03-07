@@ -16,7 +16,7 @@ endef
 
 define WEBVIEWER_INSTALL_TARGET_CMDS
 	$(TARGET_MAKE_ENV) $(MAKE) -C $(@D) $(TARGET_CONFIGURE_OPTS) \
-		DESTDIR=$(TARGET_DIR) PREFIX=/usr/bin install
+		DESTDIR=$(TARGET_DIR) PREFIX=/usr install
 endef
 
 $(eval $(generic-package))
