@@ -1,0 +1,5 @@
+# Hash from: http://download.qt.io/official_releases/qt/5.6/5.6.2/submodules/qtwebengine-opensource-src-5.6.2.tar.xz.mirrorlist
+sha256 c80e90237bb7bd52a3fa843415c17a8e8e6d779b65efd1393472f24f8642e04c  qtwebengine-opensource-src-5.6.2.tar.xz
+
+# Hash from: http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtwebengine-opensource-src-5.8.0.tar.xz
+sha256 223d22f1660811e60677afe0a85f2f385823e25157689561489700c5d1da79be  qtwebengine-opensource-src-5.8.0.tar.xz

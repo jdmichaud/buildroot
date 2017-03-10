@@ -1,0 +1,36 @@
+From 46d14faacd46a24d27e2d40054623a7ad3f64158 Mon Sep 17 00:00:00 2001
+From: =?utf-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@savoirfairelinux.com>
+Date: Mon, 13 Mar 2017 19:42:14 -0400
+Subject: [PATCH] Make qmake exit failure if an error happened
+
+qmake exits success even if a required dependency is not met.
+
+For example:
+$ qmake && make
+...
+khronos development headers appear to be missing (mesa/libegl1-mesa-dev)
+QtWebEngine will not be built.
+make: Nothing to be done for `first'.
+
+This patch reports the message as error; which causes the qmake
+incocation to fail.
+---
+ qtwebengine.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/qtwebengine.pro b/qtwebengine.pro
+index b6e7358..83c026b 100644
+--- a/qtwebengine.pro
++++ b/qtwebengine.pro
+@@ -10,7 +10,7 @@ isPlatformSupported() {
+ !isEmpty(skipBuildReason) {
+     SUBDIRS =
+     log($${skipBuildReason}$${EOL})
+-    log(QtWebEngine will not be built.$${EOL})
++    error(QtWebEngine will not be built.$${EOL})
+ }
+ 
+ OTHER_FILES = \
+-- 
+2.10.2
+
