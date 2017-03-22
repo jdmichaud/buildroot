@@ -42,6 +42,10 @@ config BR2_PACKAGE_QT5WEBENGINE_PROPRIETARY_CODECS
 	  includes required proprietary audio and video codecs, such as H.264
 	  and MPEG layer-3 (MP3).
 
+config BR2_PACKAGE_QT5WEBENGINE_SYSTEM_ICU
+	bool "use system icu"
+	depends on BR2_PACKAGE_ICU
+
 config BR2_PACKAGE_QT5WEBENGINE_SYSTEM_FFMPEG
 	bool "use system ffmpeg"
 	depends on BR2_PACKAGE_FFMPEG
