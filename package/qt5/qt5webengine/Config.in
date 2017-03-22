@@ -41,4 +41,8 @@ config BR2_PACKAGE_QT5WEBENGINE_PROPRIETARY_CODECS
 	  Qt WebEngine supports the MPEG-4 Part 14 (MP4) file format; which
 	  includes required proprietary audio and video codecs, such as H.264
 	  and MPEG layer-3 (MP3).
+
+config BR2_PACKAGE_QT5WEBENGINE_SYSTEM_FFMPEG
+	bool "use system ffmpeg"
+	depends on BR2_PACKAGE_FFMPEG
 endif

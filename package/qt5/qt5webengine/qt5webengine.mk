@@ -30,6 +30,10 @@ ifeq ($(BR2_PACKAGE_QT5WEBENGINE_PROPRIETARY_CODECS),y)
 QMAKEFLAGS += WEBENGINE_CONFIG+=use_proprietary_codecs
 endif
 
+ifeq ($(BR2_PACKAGE_QT5WEBENGINE_SYSTEM_FFMPEG),y)
+QMAKEFLAGS += WEBENGINE_CONFIG+=use_system_ffmpeg
+endif
+
 # QtWebengine's build system uses python, but only supports python2. We work
 # around this by forcing python2 early in the PATH, via a python->python2
 # symlink.
