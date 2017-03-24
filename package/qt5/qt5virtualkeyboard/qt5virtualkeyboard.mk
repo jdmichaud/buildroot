@@ -51,6 +51,14 @@ QT5VIRTUALKEYBOARD_LICENSE += MIT
 QT5VIRTUALKEYBOARD_LICENSE_FILES += src/virtualkeyboard/3rdparty/lipi-toolkit/MIT_LICENSE.txt
 endif
 
+ifeq ($(BR2_PACKAGE_QT5VIRTUALKEYBOARD_HUNSPELL),y)
+QMAKEFLAGS += CONFIG+=hunspell
+else
+ifeq ($(BR2_PACKAGE_HUNSPELL),y)
+QMAKEFLAGS += CONFIG+=disable-hunspell
+endif
+endif
+
 ifneq ($(strip $(THIRD_PARTS)),)
 define QT5VIRTUALKEYBOARD_INSTALL_TARGET_THIRD_PARTS
 	cp -dpfr $(STAGING_DIR)/usr/qtvirtualkeyboard $(TARGET_DIR)/usr

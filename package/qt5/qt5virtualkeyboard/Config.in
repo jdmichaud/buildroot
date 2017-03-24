@@ -49,4 +49,10 @@ config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING
 
 	  Lipi Toolkit (LipiTk) is an open source toolkit for online Handwriting
 	  Recognition.
+
+config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HUNSPELL
+	bool "hunspell"
+	depends on BR2_PACKAGE_HUNSPELL
+	help
+	  Word reselect for Hunspell word prediction.
 endif
