@@ -63,6 +63,10 @@ ifeq ($(BR2_PACKAGE_QT5VIRTUALKEYBOARD_RETRO_STYLE),y)
 QMAKEFLAGS += CONFIG+=retro-style
 endif
 
+ifeq ($(BR2_PACKAGE_QT5VIRTUALKEYBOARD_ARROW_KEY_NAVIGATION),y)
+QMAKEFLAGS += CONFIG+=arrow-key-navigation
+endif
+
 ifneq ($(strip $(THIRD_PARTS)),)
 define QT5VIRTUALKEYBOARD_INSTALL_TARGET_THIRD_PARTS
 	cp -dpfr $(STAGING_DIR)/usr/qtvirtualkeyboard $(TARGET_DIR)/usr

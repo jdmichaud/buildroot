@@ -63,4 +63,10 @@ config BR2_PACKAGE_QT5VIRTUALKEYBOARD_RETRO_STYLE
 	  still included in the package, but this option allows you to change
 	  the built-in default style.
 
+config BR2_PACKAGE_QT5VIRTUALKEYBOARD_ARROW_KEY_NAVIGATION
+	bool "arrow-key-navigation"
+	help
+	  Enables arrow key navigation for the keyboard
+	  Allows controlling the keyboard using the arrow and return keys.
+
 endif
