@@ -59,6 +59,10 @@ QMAKEFLAGS += CONFIG+=disable-hunspell
 endif
 endif
 
+ifeq ($(BR2_PACKAGE_QT5VIRTUALKEYBOARD_RETRO_STYLE),y)
+QMAKEFLAGS += CONFIG+=retro-style
+endif
+
 ifneq ($(strip $(THIRD_PARTS)),)
 define QT5VIRTUALKEYBOARD_INSTALL_TARGET_THIRD_PARTS
 	cp -dpfr $(STAGING_DIR)/usr/qtvirtualkeyboard $(TARGET_DIR)/usr

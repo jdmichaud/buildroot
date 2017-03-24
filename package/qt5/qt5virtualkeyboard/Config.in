@@ -55,4 +55,12 @@ config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HUNSPELL
 	depends on BR2_PACKAGE_HUNSPELL
 	help
 	  Word reselect for Hunspell word prediction.
+
+config BR2_PACKAGE_QT5VIRTUALKEYBOARD_RETRO_STYLE
+	bool "retro-style"
+	help
+	  Changes the default keyboard style to the Retro style. Both styles are
+	  still included in the package, but this option allows you to change
+	  the built-in default style.
+
 endif
