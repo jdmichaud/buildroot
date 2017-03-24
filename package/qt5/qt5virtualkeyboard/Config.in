@@ -47,8 +47,25 @@ config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING
 	help
 	  Handwriting support, with gestures for fullscreen input.
 
+choice
+	prompt "handwriting"
+	depends on BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING
+	default BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING_LIPITK
+	help
+	  Handwriting support, with gestures for fullscreen input.
+
+config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING_LIPITK
+	bool "Lipi Toolkit"
+	help
 	  Lipi Toolkit (LipiTk) is an open source toolkit for online Handwriting
 	  Recognition.
+
+config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HANDWRITING_T9_WRITE
+	bool "T9 Write"
+	help
+	  Nuance T9 Write HWR integration
+
+endchoice
 
 config BR2_PACKAGE_QT5VIRTUALKEYBOARD_HUNSPELL
 	bool "hunspell"
