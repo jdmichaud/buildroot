@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HUNSPELL
+	bool "hunspell"
+	help
+	  Hunspell is a spell checker and morphological analyzer library and
+	  program designed for languages with rich morphology and complex word
+	  compounding or character encoding.
