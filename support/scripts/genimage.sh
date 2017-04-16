@@ -11,8 +11,8 @@ shift
 while getopts :c: OPT ; do
 	case "${OPT}" in
 	c) GENIMAGE_CFG="${OPTARG}";;
-	:) die "option '${OPTARG}' expects a mandatory argument\n";;
-	\?) die "unknown option '${OPTARG}'\n";;
+	:) die "option '${OPTARG}' expects a mandatory argument";;
+	\?) die "unknown option '${OPTARG}'";;
 	esac
 done
 
