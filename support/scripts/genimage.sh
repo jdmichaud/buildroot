@@ -22,7 +22,7 @@ rm -rf "${GENIMAGE_TMP}"
 
 set -- "${@:$OPTIND}"
 
-genimage \
+exec genimage \
 	--rootpath "${TARGET_DIR}"     \
 	--tmppath "${GENIMAGE_TMP}"    \
 	--inputpath "${BINARIES_DIR}"  \
