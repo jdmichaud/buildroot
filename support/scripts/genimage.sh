@@ -20,9 +20,12 @@ done
 
 rm -rf "${GENIMAGE_TMP}"
 
+set -- "${@:$OPTIND}"
+
 genimage \
 	--rootpath "${TARGET_DIR}"     \
 	--tmppath "${GENIMAGE_TMP}"    \
 	--inputpath "${BINARIES_DIR}"  \
 	--outputpath "${BINARIES_DIR}" \
-	--config "${GENIMAGE_CFG}"
+	--config "${GENIMAGE_CFG}" \
+	"${@}"
