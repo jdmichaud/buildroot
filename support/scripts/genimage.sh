@@ -1,8 +1,11 @@
 #!/bin/bash
 
 die() {
-  echo "Error: $@" >&2
-  exit 1
+	echo "Usage: ${0##*/} -c GENIMAGE_CFG [--] [GENIMAGEOPTS...]" >&2
+	echo "" >&2
+
+	echo "Error: $@" >&2
+	exit 1
 }
 
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
@@ -16,7 +19,7 @@ while getopts :c: OPT ; do
 	esac
 done
 
-[ -n "${GENIMAGE_CFG}" ] || die "Missing argument"
+[ -n "${GENIMAGE_CFG}" ] || die "missing option 'c'"
 
 rm -rf "${GENIMAGE_TMP}"
 
