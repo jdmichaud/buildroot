@@ -8,7 +8,7 @@ die() {
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
 shift
-while getopts c: OPT ; do
+while getopts :c: OPT ; do
 	case "${OPT}" in
 	c) GENIMAGE_CFG="${OPTARG}";;
 	:) die "option '${OPTARG}' expects a mandatory argument\n";;
