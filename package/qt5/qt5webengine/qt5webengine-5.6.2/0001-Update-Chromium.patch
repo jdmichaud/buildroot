@@ -1,0 +1,46 @@
+From 15ded5ca62f53a01f85a52326f0b335a8a012bbd Mon Sep 17 00:00:00 2001
+From: Allan Sandfeld Jensen <allan.jensen@qt.io>
+Date: Tue, 8 Nov 2016 10:55:05 +0100
+Subject: [PATCH 1/1] Update Chromium
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Pulls in the security fix from Chrome 54.0.2840.87
+
+Change-Id: I70064927cba01b7978742951ba0636b780d9eb68
+Reviewed-by: Michael Brüning <michael.bruning@qt.io>
+Reviewed-by: Joerg Bornemann <joerg.bornemann@qt.io>
+---
+ dist/changes-5.7.1 | 4 ++--
+ src/3rdparty       | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/dist/changes-5.7.1 b/dist/changes-5.7.1
+index 7ba4fd2f..bf593432 100644
+--- a/dist/changes-5.7.1
++++ b/dist/changes-5.7.1
+@@ -26,11 +26,11 @@ information about a particular change.
+ ****************************************************************************
+ 
+  - Chromium Snapshot:
+-   * Security fixes from Chromium up to version 54.0.2840.59
++   * Security fixes from Chromium up to version 54.0.2840.87
+     Including: CVE-2016-5133, CVE-2016-5147, CVE-2016-5153, CVE-2016-5155,
+       CVE-2016-5161, CVE-2016-5166, CVE-2016-5170, CVE-2016-5171,
+       CVE-2016-5172, CVE-2016-5181, CVE-2016-5185, CVE-2016-5186,
+-      CVE-2016-5187, CVE-2016-5188, CVE-2016-5192
++      CVE-2016-5187, CVE-2016-5188, CVE-2016-5192, CVE-2016-5198
+    * Support for macOS 10.12 Sierra
+    * Various backported crash and assert fixes
+ 
+diff --git a/src/3rdparty b/src/3rdparty
+index d3651e09..b3c79e92 160000
+--- a/src/3rdparty
++++ b/src/3rdparty
+@@ -1 +1 @@
+-Subproject commit d3651e09c34202cc83e32c200fd50cc1f90ab169
++Subproject commit b3c79e92f0a631273b639af171e59f4c367ae02e
+-- 
+2.12.1
+
