@@ -1,0 +1,16 @@
+[project]
+org='sfl'
+name='buildroot'
+
+[build]
+distro=ubuntu
+command='make raspberrypi3_qt5_defconfig O=output-latest && make source O=output-latest && make O=output-latest'
+files='output/images/sdcard.img'
+archive='%Po-%Pn_%D3-%Gh.tar.xz'
+flavors='lts menuconfig'
+
+[menuconfig]
+command='make raspberrypi3_qt5_defconfig O=output-latest && make menuconfig O=output-latest'
+
+[lts]
+command='make raspberrypi3_qt5_lts_defconfig O=output-lts && make source O=output-lts && make O=output-lts'
