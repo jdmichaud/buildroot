@@ -28,6 +28,8 @@ config BR2_PACKAGE_QT5WEBENGINE
 	depends on BR2_TOOLCHAIN_HAS_THREADS # libglib2, libvpx, qt5base-dbus
 	depends on BR2_USE_WCHAR # libglib2
 	depends on BR2_USE_MMU # libglib2, qt5base-dbus
+	# For https://bugreports.qt.io/browse/QTBUG-61873
+	select BR2_HOSTARCH_NEEDS_IA32_COMPILER # gcc-multiarch
 	select BR2_PACKAGE_LIBGLIB2
 	select BR2_PACKAGE_QT5BASE
 	select BR2_PACKAGE_QT5BASE_DBUS
