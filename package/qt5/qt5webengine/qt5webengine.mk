@@ -8,7 +8,7 @@ QT5WEBENGINE_VERSION = $(QT5_VERSION)
 QT5WEBENGINE_SITE = $(QT5_SITE)
 QT5WEBENGINE_SOURCE = qtwebengine-opensource-src-$(QT5WEBENGINE_VERSION).tar.xz
 QT5WEBENGINE_DEPENDENCIES = qt5base qt5declarative qt5webchannel ffmpeg icu \
-	host-gperf host-python
+	host-gperf host-python host-bison
 QT5WEBENGINE_INSTALL_STAGING = YES
 
 include package/qt5/qt5webengine/chromium.inc
